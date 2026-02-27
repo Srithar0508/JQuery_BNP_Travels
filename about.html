@@ -3,10 +3,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BNP Travels India Pvt Ltd</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.4)),
+                        url('images/aboutus_hero_image.svg') center/cover no-repeat;
+        }
+
+        .btn-green {
+            background: linear-gradient(to right, #0f9d58, #198754);
+        }
+
+        .btn-green:hover {
+            background: linear-gradient(to right, #198754, #0f9d58);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        #feedback-slider {
+            display: flex;
+        }
+        .team-hover-card {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>about</h1>
-    
+
+<!-- NAVBAR -->
+<header class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+        <div class="flex items-center space-x-3">
+            <img src="images/anplogo.svg" class="h-10">
+            <h1 class="text-green-700 font-bold text-lg">BNP Travels India Pvt Ltd</h1>
+        </div>
+
+        <nav class="hidden md:flex space-x-8 font-medium">
+            <a href="index.html" class="hover:text-green-600">Home</a>
+            <a href="about.html" class="hover:text-green-600">About</a>
+            <a href="services.html" class="hover:text-green-600">Services</a>
+            <a href="gallery.html" class="hover:text-green-600">Gallery</a>
+            <a href="contact.html" class="hover:text-green-600">Contact</a>
+        </nav>
+
+        <a href="contact.html" class="hidden md:block btn-green text-white px-5 py-2 rounded-md shadow-md">
+            Book Now →
+        </a>
+
+        <button id="menu-btn" class="md:hidden text-2xl text-green-700">☰</button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white">
+        <a href="index.html" class="block px-6 py-3 hover:bg-green-50">Home</a>
+        <a href="about.html" class="block px-6 py-3 hover:bg-green-50">About</a>
+        <a href="services.html" class="block px-6 py-3 hover:bg-green-50">Services</a>
+        <a href="gallery.html" class="block px-6 py-3 hover:bg-green-50">Gallery</a>
+        <a href="contact.html" class="block px-6 py-3 hover:bg-green-50">Contact</a>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero-bg h-screen flex items-center text-white pt-20">
+    <div class="container mx-auto px-6">
+        <div class="max-w-2xl">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="text-green-500 hover:text-green-600 cursor-pointer">Home</a>
+                <span>/</span>
+                <p>About US</p>
+            </div>
+
+            <h2 id="hero-title" class="text-4xl md:text-6xl font-bold leading-tight">
+                About us <br>
+            </h2>
+
+            <p id="hero-text" class="text-orange-500 mt-6 text-lg md:text-xl text-gray-200">
+                Creating quality Lifestyles, building stronger communities Quality Construction Services..            
+            </p>
+            <a href="contact.html"
+               id="hero-btn"
+               class="mt-8 inline-block btn-green text-white px-6 py-3 rounded-md shadow-lg">
+               Contact Us →
+            </a>
+        </div>
+    </div>
+</section>  
+
+<!-- ABOUT SECTION -->
+<section class="bg-gray-100 py-20 overflow-hidden">
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+    <!-- LEFT IMAGE SECTION -->
+        <div class="relative lg:w-1/2 about-img">
+            <!-- Main Image -->
+             <img src="images/aboutus_1.svg" alt="About Us Image" class="w-full max-w-md shadow-xl">
+             <!-- Small Overlay Image -->
+              <img src="images/aboutus_2.svg" alt="About Us Image" class="absolute -bottom-10 -left-10 w-60 shadow-xl border-8 border-gray-100">
+        </div>
+                <!-- RIGHT CONTENT SECTION -->
+        <div class="lg:w-1/2 about-content">
+
+            <p class="uppercase tracking-widest text-gray-500 mb-4">
+                ABOUT US
+            </p>
+
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-6">
+                Get to know about <br> Annapoorna
+            </h2>
+
+            <p class="text-green-600 text-lg mb-6">
+                Content Here, Content Here Making It Look Like Red.
+            </p>
+
+            <p class="text-gray-600 leading-relaxed mb-8">
+                It Is A Long Established Fact That A Reader Will Be Distracted By
+                Readable Content Of A Page When Looking At Its Layout. The Using
+                Lorem Ipsum Is That It Has A More-Or-Less Normal Dead.
+            </p>
+
+            <!-- Founder Info -->
+            <div class="flex items-center gap-4">
+                <img src="images/aboutus_co_founder_image.svg"
+                     class="w-16 h-16 rounded-full border-4 border-yellow-400">
+
+                <div>
+                    <h4 class="text-orange-500 font-semibold text-lg font-relaxed">
+                        Sasi Kumar
+                    </h4>
+                    <p class="text-gray-600">
+                        ANP–Co Founder
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CLIENT FEEDBACK SECTION ================= -->
+<section class="bg-gray-100 py-20 overflow-hidden">
+    <div class="container mx-auto px-6">
+
+        <!-- Heading + Arrows -->
+        <div class="flex justify-between items-center mb-12">
+            <div>
+                <p class="uppercase tracking-widest text-gray-500 mb-3">
+                    OUR CLIENTS FEEDBACK
+                </p>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800">
+                    What they’re talking <br> about us
+                </h2>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex gap-4">
+                <button id="feedback-prev"
+                        class="w-14 h-14 rounded-full border border-gray-300 flex items-center justify-center text-2xl hover:bg-green-600 hover:text-white transition">
+                    ←
+                </button>
+                <button id="feedback-next"
+                        class="w-14 h-14 rounded-full border border-gray-300 flex items-center justify-center text-2xl hover:bg-green-600 hover:text-white transition">
+                    →
+                </button>
+            </div>
+        </div>
+
+        <!-- Slider Wrapper -->
+        <div id="feedback-wrapper" class="overflow-hidden">
+            <div id="feedback-slider"
+                 class="flex gap-8 transition-all duration-500">
+
+                <!-- CARD 1 -->
+                <div class="feedback-card min-w-[48%] bg-gray-200 p-8 rounded-md relative">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">
+                        Nikhil Rajan
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Excellent service and very professional drivers. The ride was smooth and comfortable.
+                    </p>
+
+                    <div class="absolute right-6 top-6">
+                        <img src="images/aboutus_team_1.svg"
+                             class="w-20 h-20 rounded-full border-4 border-yellow-400">
+                    </div>
+
+                    <div class="flex items-center gap-2 text-yellow-400 mt-4">
+                        ★★★★★
+                        <span class="text-gray-500 text-sm ml-2">
+                            4.9 Reviews
+                        </span>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="feedback-card min-w-[48%] bg-gray-200 p-8 rounded-md relative">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">
+                        Priya Sharma
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Very punctual and reliable transport services. Highly recommended!
+                    </p>
+
+                    <div class="absolute right-6 top-6">
+                        <img src="images/aboutus_team_2.svg"
+                             class="w-20 h-20 rounded-full border-4 border-yellow-400">
+                    </div>
+
+                    <div class="flex items-center gap-2 text-yellow-400 mt-4">
+                        ★★★★★
+                        <span class="text-gray-500 text-sm ml-2">
+                            4.8 Reviews
+                        </span>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="feedback-card min-w-[48%] bg-gray-200 p-8 rounded-md relative">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">
+                        Arjun Mehta
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Clean vehicles and friendly staff. Booking process was simple and quick.
+                    </p>
+
+                    <div class="absolute right-6 top-6">
+                        <img src="images/aboutus_team_3.svg"
+                             class="w-20 h-20 rounded-full border-4 border-yellow-400">
+                    </div>
+
+                    <div class="flex items-center gap-2 text-yellow-400 mt-4">
+                        ★★★★★
+                        <span class="text-gray-500 text-sm ml-2">
+                            5.0 Reviews
+                        </span>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="feedback-card min-w-[48%] bg-gray-200 p-8 rounded-md relative">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">
+                        Kavya Reddy
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Great customer support and affordable pricing. Will use again!
+                    </p>
+
+                    <div class="absolute right-6 top-6">
+                        <img src="images/aboutus_team_2.svg"
+                             class="w-20 h-20 rounded-full border-4 border-yellow-400">
+                    </div>
+
+                    <div class="flex items-center gap-2 text-yellow-400 mt-4">
+                        ★★★★★
+                        <span class="text-gray-500 text-sm ml-2">
+                            4.7 Reviews
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PROFESSIONAL TEAM SECTION ================= -->
+<section class="bg-gray-100 py-15">
+    <div class="container mx-auto px-6 text-center">
+
+        <p class="uppercase tracking-widest text-gray-500 mb-4">
+            OUR PROFESSIONAL TEAM
+        </p>
+
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-16">
+            Meet the team behind the <br> Annapoorna
+        </h2>
+
+        <!-- Team Grid -->
+        <div class="grid md:grid-cols-3 gap-10 pb-3">
+
+            <!-- CARD 1 -->
+            <div class="team-hover-card relative overflow-hidden group">
+                <img src="images/aboutus_team_1.svg"
+                     class="w-full h-[300px] object-cover">
+
+                <div class="team-info absolute bottom-0 left-0 w-full
+                            bg-gradient-to-t from-green-600 to-green-400
+                            text-white text-center py-3 translate-y-full">
+                    <h3 class="text-xl font-semibold">Arun Karthick</h3>
+                    <p>Founder</p>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="team-hover-card relative overflow-hidden group">
+                <img src="images/aboutus_team_2.svg"
+                     class="w-full h-[300px] object-cover">
+
+                <div class="team-info absolute bottom-0 left-0 w-full
+                            bg-gradient-to-t from-green-600 to-green-400
+                            text-white text-center py-3 translate-y-full">
+                    <h3 class="text-xl font-semibold">Meera Nair</h3>
+                    <p>Operations Head</p>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="team-hover-card relative overflow-hidden group">
+                <img src="images/aboutus_team_3.svg"
+                     class="w-full h-[300px] object-cover">
+
+                <div class="team-info absolute bottom-0 left-0 w-full
+                            bg-gradient-to-t from-green-600 to-green-400
+                            text-white text-center py-3 translate-y-full">
+                    <h3 class="text-xl font-semibold">Rahul Varma</h3>
+                    <p>Marketing Director</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div id="footer-section"></div>
+
+<!-- Bottom Copyright -->
+<footer class="bg-green-800 text-white text-center py-5">
+    © 2026 BNP Travels India Pvt Ltd. All Rights Reserved.
+</footer>
+<script src="js/script.js"></script>
+
+<script>
+    let feedbackIndex = 0;
+    const visibleCards = 2;
+    const totalFeedbackCards = $(".feedback-card").length;
+    let autoSlide;
+
+    function updateFeedbackSlider() {
+        const cardWidth = $(".feedback-card").outerWidth(true);
+        const moveAmount = feedbackIndex * cardWidth;
+
+        $("#feedback-slider").css({
+            transform: `translateX(-${moveAmount}px)`,
+            transition: "transform 0.5s ease"
+        });
+    }
+
+    function startAutoSlide() {
+        autoSlide = setInterval(function () {
+            if (feedbackIndex < totalFeedbackCards - visibleCards) {
+                feedbackIndex++;
+            } else {
+                feedbackIndex = 0; // restart from beginning
+            }
+            updateFeedbackSlider();
+        }, 3000); // 3 seconds
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    $("#feedback-next").click(function () {
+        if (feedbackIndex < totalFeedbackCards - visibleCards) {
+            feedbackIndex++;
+        } else {
+            feedbackIndex = 0;
+        }
+        updateFeedbackSlider();
+        resetAutoSlide();
+    });
+
+    $("#feedback-prev").click(function () {
+        if (feedbackIndex > 0) {
+            feedbackIndex--;
+        } else {
+            feedbackIndex = totalFeedbackCards - visibleCards;
+        }
+        updateFeedbackSlider();
+        resetAutoSlide();
+    });
+    startAutoSlide();
+</script>
+
 </body>
+
 </html>

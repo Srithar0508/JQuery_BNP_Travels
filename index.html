@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ANP Travels India Pvt Ltd</title>
+    <title>BNP Travels India Pvt Ltd</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Tailwind -->
@@ -16,6 +16,13 @@
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+    </script>
 
     <style>
         body {
@@ -52,7 +59,7 @@
 
         <div class="flex items-center space-x-3">
             <img src="images/anplogo.svg" class="h-10">
-            <h1 class="text-green-700 font-bold text-lg">ANP Travels India Pvt Ltd</h1>
+            <h1 class="text-green-700 font-bold text-lg">BNP Travels India Pvt Ltd</h1>
         </div>
 
         <nav class="hidden md:flex space-x-8 font-medium">
@@ -79,7 +86,6 @@
         <a href="contact.html" class="block px-6 py-3 hover:bg-green-50">Contact</a>
     </div>
 </header>
-
 
 <!-- HERO SECTION -->
 <section class="hero-bg h-screen flex items-center text-white pt-20">
@@ -193,14 +199,489 @@
 </section>
 
 <!-- ================= COUNTER SECTION ================= -->
- <section class="">
+ <section class="relative py-20 bg-cover bg-center" 
+ style="background-image: url('images/home1.svg');">
+
+ <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+    <div class="relative z-10 container mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+            <!-- ITEM 1 -->
+            <div>
+                <div class="w-24 h-24 mx-auto flex items-center justify-center bg-white rounded-full border-4 border-green-500 shadow-lg">
+                    <img src="images/fleet1.svg" alt="" class="h-10">
+                </div>
+
+                <h2 class="counter text-3xl md:text-4xl font-bold mt-6" data-target="500">0</h2>
+                <p class="mt-2 text-gray-200">Fleet Available</p>
+            </div>
+            <!-- ITEM 2 -->
+                <div>
+                    <div class="w-24 h-24 mx-auto flex items-center justify-center bg-white rounded-full border-4 border-green-500 shadow-lg">
+                        <img src="images/users_391194 1.svg" class="h-10">
+                    </div>
+
+                    <h2 class="counter text-3xl md:text-4xl font-bold mt-6" data-target="2000">0</h2>
+                    <p class="mt-2 text-gray-200">Happy Users</p>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div>
+                    <div class="w-24 h-24 mx-auto flex items-center justify-center bg-white rounded-full border-4 border-green-500 shadow-lg">
+                        <img src="images/driver_3785281 1.svg" class="h-10">
+                    </div>
+
+                    <h2 class="counter text-3xl md:text-4xl font-bold mt-6" data-target="999">0</h2>
+                    <p class="mt-2 text-gray-200">Our Drivers</p>
+                </div>
+
+                <!-- ITEM 4 -->
+                <div>
+                    <div class="w-24 h-24 mx-auto flex items-center justify-center bg-white rounded-full border-4 border-green-500 shadow-lg">
+                        <img src="images/group_921347 1.svg" class="h-10">
+                    </div>
+
+                    <h2 class="counter text-3xl md:text-4xl font-bold mt-6" data-target="50">0</h2>
+                    <p class="mt-2 text-gray-200">Our Team</p>
+                </div>
+        </div>
+    </div>
 
  </section>
 
- <div id="footer-section"></div>
+<!-- ================= ABOUT US SECTION ================= -->
+<section class="py-20 bg-gray-50 relative overflow-hidden">
+
+    <!-- Big Background Text -->
+    <h1 class="absolute top-10 left-1/2 -translate-x-1/2 text-7xl md:text-9xl font-bold text-green-100 opacity-40 select-none">
+        ABOUT US
+    </h1>
+
+    <div class="relative z-10 container mx-auto px-6">
+
+        <!-- Section Title -->
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-600">ABOUT US</h2>
+
+            <p class="mt-6 text-gray-600 max-w-3xl mx-auto">
+                Committed To Seamless Travel Experiences, We Provide Reliable And Professional 
+                Transportation Services Tailored To Exceed Your Expectations.
+            </p>
+        </div>
+
+        <!-- Content Row -->
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+
+            <!-- Left Image -->
+            <div class="about-img">
+                <img src="images/Home About us.svg"
+                     class="rounded-lg shadow-lg w-full h-[400px] object-cover">
+            </div>
+
+            <!-- Right Content -->
+            <div class="about-content">
+
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-800">
+                    Our Journey Begins Here:
+                </h3>
+
+                <h4 class="text-2xl md:text-3xl font-bold mt-2">
+                    <span class="text-orange-500">Exceptional</span>
+                    <span class="text-gray-800"> Travel Services</span>
+                </h4>
+
+                <p class="mt-6 text-gray-600 leading-relaxed">
+                    Welcome To ANP Travels India Pvt Ltd, Where Experience Meets Excellence 
+                    In Company Transport Management. With Extensive Expertise And A Deep 
+                    Understanding Of Transport Systems, Our Team Excels In Catering To The 
+                    Needs Of Multinational Organizations, Effortlessly Managing Up To 800+ 
+                    Employees And Over 1500+ Vehicles.
+                </p>
+
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    At ANP Travels, We Pride Ourselves On Our Flexibility, Agility In 
+                    Responding To Change, And Meticulous Organization Skills. We Specialize 
+                    In Planning And Executing Seamless Transport Schedules, Ensuring That 
+                    Every Journey Is Smooth And Efficient.
+                </p>
+
+                <a href="about.html"
+                   class="inline-block mt-8 px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 
+                          text-white rounded-full shadow-md hover:shadow-lg transition">
+                    Know More →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= OUR SERVICES SECTION ================= -->
+ <section class="py-24 bg-[#eef6f1] relative overflow-hidden">
+    <!-- Big Background Text -->
+    <h1 class="absolute top-10 left-1/2 -translate-x-1/2 text-7xl md:text-9xl font-bold text-green-100 opacity-40 select-none">
+        OUR SERVICES
+    </h1>
+
+    <div class="relative z-10 container mx-auto px-6">
+        <!-- Section Heading -->
+         <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-600">
+                OUR SERVICES
+            </h2>
+         </div>
+         <!-- Services Layout -->
+        <div class="grid md:grid-cols-3 gap-10 items-center">
+
+            <!-- LEFT COLUMN -->
+            <div class="space-y-16 text-center md:text-right">
+
+                <!-- Service 01 -->
+                <div class="service-item">
+                    <div class="inline-block border border-green-500 
+                                text-green-600 rounded-full px-4 py-2 text-sm font-semibold">
+                        01
+                    </div>
+                    <h3 class="text-xl font-semibold mt-4">Cab Services</h3>
+                    <p class="mt-3 text-gray-600">
+                        Reliable and professional cab services with experienced drivers, 
+                        flexible scheduling, and premium vehicles ensuring a comfortable 
+                        journey every time.
+                    </p>
+                </div>
+
+                <!-- Service 02 -->
+                <div class="service-item">
+                    <div class="inline-block border border-green-500 
+                                text-green-600 rounded-full px-4 py-2 text-sm font-semibold">
+                        02
+                    </div>
+                    <h3 class="text-xl font-semibold mt-4">Bus Service</h3>
+                    <p class="mt-3 text-gray-600">
+                        Cost-effective and safe bus transport solutions for corporate 
+                        groups, institutions, and large travel requirements.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- CENTER IMAGE -->
+            <div class="flex justify-center">
+                <img src="images/Home Our Serveces.svg" 
+                     class="w-72 md:w-96 object-contain service-image">
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="space-y-16 text-center md:text-left">
+
+                <!-- Service 05 -->
+                <div class="service-item">
+                    <div class="inline-block border border-green-500 
+                                text-green-600 rounded-full px-4 py-2 text-sm font-semibold">
+                        05
+                    </div>
+                    <h3 class="text-xl font-semibold mt-4">Airport Taxi Service</h3>
+                    <p class="mt-3 text-gray-600">
+                        On-time airport pickups and drop-offs with well-maintained 
+                        vehicles ensuring stress-free travel to and from airports.
+                    </p>
+                </div>
+
+                <!-- Service 04 -->
+                <div class="service-item">
+                    <div class="inline-block border border-green-500 
+                                text-green-600 rounded-full px-4 py-2 text-sm font-semibold">
+                        04
+                    </div>
+                    <h3 class="text-xl font-semibold mt-4">
+                        Employee Transport Solutions
+                    </h3>
+                    <p class="mt-3 text-gray-600">
+                        Corporate employee transport management with efficient 
+                        route planning, real-time coordination, and safety compliance.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Service -->
+        <div class="mt-20 text-center service-item">
+            <div class="inline-block border border-green-500 
+                        text-green-600 rounded-full px-4 py-2 text-sm font-semibold">
+                03
+            </div>
+            <h3 class="text-xl font-semibold mt-4">Outstation Travels</h3>
+            <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
+                Comfortable long-distance travel services with professional drivers 
+                and luxury vehicles tailored for family trips, business tours, 
+                and weekend getaways.
+            </p>
+        </div>
+    </div>
+
+ </section>
+
+<!-- ================= MANAGEMENT TEAM SECTION ================= -->
+<section class="py-24 bg-[#f4f7f5] relative overflow-hidden">
+
+    <!-- Big Background Text -->
+    <h1 class="absolute top-10 left-1/2 -translate-x-1/2 
+               text-7xl md:text-9xl font-bold text-green-100 opacity-40 select-none">
+        MANAGEMENT TEAM
+    </h1>
+
+    <!-- Decorative Shapes -->
+    <div class="absolute left-0 top-1/3 w-32 h-32 bg-green-600 rounded-r-full"></div>
+    <div class="absolute right-0 bottom-10 w-32 h-32 bg-orange-500 rounded-l-full"></div>
+
+    <div class="relative z-10 container mx-auto px-6">
+
+        <!-- Section Heading -->
+        <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-600">
+                MANAGEMENT TEAM
+            </h2>
+        </div>
+
+        <!-- Team Grid -->
+        <div class="grid md:grid-cols-2 gap-12">
+
+            <!-- Team Member 1 -->
+            <div class="team-card bg-green-50 rounded-xl p-10 text-center relative shadow-md">
+
+                <!-- Profile Image -->
+                <div class="absolute -top-16 left-1/2 -translate-x-1/2">
+                    <img src="images/Home Our Serveces.svg"
+                         class="w-32 h-32 rounded-full border-4 border-green-600 object-cover">
+                </div>
+
+                <div class="mt-20 text-gray-600 leading-relaxed">
+                    Graduate in commerce is very good in working out in financial 
+                    matter along with procurement of vehicle through financial 
+                    institution, Has a good approach in helping out to own company 
+                    based vehicle through own sources, Has the capacity to sustain 
+                    any financial load at any point of circumstances.
+                </div>
+
+                <p class="mt-6 text-green-600 font-semibold">
+                    – Muralidhar. C. K
+                </p>
+
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-card bg-green-50 rounded-xl p-10 text-center relative shadow-md">
+
+                <!-- Profile Image -->
+                <div class="absolute -top-16 left-1/2 -translate-x-1/2">
+                    <img src="images/Home Our Serveces.svg"
+                         class="w-32 h-32 rounded-full border-4 border-green-600 object-cover">
+                </div>
+
+                <div class="mt-20 text-gray-600 leading-relaxed">
+                    Graduate in science has worked in marketing institutions and 
+                    construction company, Has effective work man ship in operations 
+                    with vast experience of 10 years. Has worked with Major Clients 
+                    like Jones Lang Laselle, Hewlett Packard, CB Richard Ellis 
+                    and associate with HSBC (CBRE), ensuring smooth operations 
+                    throughout the process.
+                </div>
+
+                <p class="mt-6 text-green-600 font-semibold">
+                    – Nagesh. M. K
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= GALLERY SECTION ================= -->
+<section class="py-24 bg-[#f4f7f5] relative overflow-hidden">
+
+    <!-- Big Background Text -->
+    <h1 class="absolute top-10 left-1/2 -translate-x-1/2 
+               text-7xl md:text-9xl font-bold text-green-100 opacity-40 select-none">
+        GALLERY
+    </h1>
+
+    <div class="relative z-10 container mx-auto px-6">
+
+        <!-- Section Heading -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-600">
+                GALLERY
+            </h2>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Image 1 -->
+            <div class="gallery-item overflow-hidden rounded-xl border-4 border-green-500">
+                <img src="images/fleet1.svg"
+                     class="w-full h-64 object-cover transition duration-500 hover:scale-110">
+            </div>
+
+            <!-- Image 2 -->
+            <div class="gallery-item overflow-hidden rounded-xl border-4 border-green-500">
+                <img src="images/fleet2.svg"
+                     class="w-full h-64 object-cover transition duration-500 hover:scale-110">
+            </div>
+
+            <!-- Image 3 -->
+            <div class="gallery-item overflow-hidden rounded-xl border-4 border-green-500">
+                <img src="images/fleet3.svg"
+                     class="w-full h-64 object-cover transition duration-500 hover:scale-110">
+            </div>
+
+            <!-- Image 4 -->
+            <div class="gallery-item overflow-hidden rounded-xl border-4 border-green-500">
+                <img src="images/home1.svg"
+                     class="w-full h-64 object-cover transition duration-500 hover:scale-110">
+            </div>
+
+        </div>
+
+        <!-- Button -->
+        <div class="text-center mt-16">
+            <a href="gallery.html"
+               class="inline-block px-8 py-3 
+                      bg-gradient-to-r from-green-600 to-green-500 
+                      text-white rounded-full shadow-md hover:shadow-lg transition">
+                Know More →
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="py-24 bg-[#f4f7f5] relative overflow-hidden">
+
+    <!-- Big Background Text -->
+    <h1 class="absolute top-10 left-1/2 -translate-x-1/2 
+               text-7xl md:text-9xl font-bold text-green-100 opacity-40 select-none">
+        CONTACT US
+    </h1>
+
+    <div class="relative z-10 container mx-auto px-6">
+
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-600">
+                CONTACT US
+            </h2>
+        </div>
+
+        <!-- Contact Info Row -->
+        <div class="grid md:grid-cols-3 gap-8 text-center mb-16">
+
+            <!-- Address -->
+            <div>
+                <div class="w-14 h-14 mx-auto flex items-center justify-center 
+                            border border-green-500 rounded-lg text-green-600 text-xl">
+                    📍
+                </div>
+                <p class="mt-4 text-gray-600">
+                    26/1, (999)38 Cross,<br>
+                    23rd Main 4th T Block,<br>
+                    Jayanagar, Bangalore - 560041
+                </p>
+            </div>
+
+            <!-- Phone -->
+            <div>
+                <div class="w-14 h-14 mx-auto flex items-center justify-center 
+                            border border-green-500 rounded-lg text-green-600 text-xl">
+                    📞
+                </div>
+                <p class="mt-4 text-gray-600">
+                    +91-9880999994<br>
+                    +91-9880844220
+                </p>
+            </div>
+
+            <!-- Email -->
+            <div>
+                <div class="w-14 h-14 mx-auto flex items-center justify-center 
+                            border border-green-500 rounded-lg text-green-600 text-xl">
+                    ✉
+                </div>
+                <p class="mt-4 text-gray-600">
+                    info@annapoorna.in
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Form & Map -->
+        <div class="grid md:grid-cols-2 gap-12">
+
+            <!-- Contact Form -->
+            <div class="bg-white p-8 rounded-xl border border-green-500 shadow-md">
+
+                <form>
+
+                    <div class="mb-5">
+                        <label class="block text-gray-700 mb-2">Full Name</label>
+                        <input type="text"
+                               placeholder="Enter Your Full Name"
+                               class="w-full border border-gray-300 rounded-md px-4 py-3 
+                                      focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="block text-gray-700 mb-2">Email</label>
+                        <input type="email"
+                               placeholder="Enter Your E-mail"
+                               class="w-full border border-gray-300 rounded-md px-4 py-3 
+                                      focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="block text-gray-700 mb-2">Message</label>
+                        <textarea rows="5"
+                                  class="w-full border border-gray-300 rounded-md px-4 py-3 
+                                         focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="w-full py-3 rounded-full 
+                                   bg-gradient-to-r from-green-600 to-green-500 
+                                   text-white font-semibold shadow-md 
+                                   hover:shadow-lg transition">
+                        Submit
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- Google Map -->
+            <div class="rounded-xl overflow-hidden border border-green-500 shadow-md">
+
+                <iframe 
+                    src="https://www.google.com/maps?q=Jayanagar,Bangalore&output=embed"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="footer-section"></div>
 
 
-<!-- FOOTER -->
+<!-- Bottom Copyright -->
 <footer class="bg-green-800 text-white text-center py-5">
     © 2026 BNP Travels India Pvt Ltd. All Rights Reserved.
 </footer>
