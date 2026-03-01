@@ -10,7 +10,89 @@ $(document).ready(function () {
         $("#mobile-menu").slideUp(300);
     });
 
+    // ================= SERVICES DATA =================
+    const services = {
+        cab: {
+            title: "Cab Services",
+            text: "Premium cab services with professional drivers ensuring safety, comfort, and punctuality for every journey.",
+            image: "images/cabservices.svg"
+        },
+        bus: {
+            title: "Bus Services",
+            text: "Comfortable and spacious buses ideal for corporate and group travel needs.",
+            image: "images/fleet3.svg"
+        },
+        outstation: {
+            title: "Outstation Travels",
+            text: "Reliable long-distance travel services with well-maintained vehicles.",
+            image: "images/fleet2.svg"
+        },
+        employee: {
+            title: "Employee Transport",
+            text: "Efficient employee transportation solutions with route optimization.",
+            image: "images/fleet1.svg"
+        },
+        airport: {
+            title: "Airport Taxi Services",
+            text: "On-time airport pickups and drop-offs with professional chauffeurs.",
+            image: "images/fleet3.svg"
+        }
+    };
 
+
+    // ================= TAB CLICK =================
+    $(".service-tab").click(function () {
+
+        let serviceKey = $(this).data("service");
+
+        // Change active tab
+        $(".service-tab").removeClass("active-tab");
+        $(this).addClass("active-tab");
+
+        // GSAP OUT ANIMATION
+        gsap.to("#service-content", {
+            opacity: 0,
+            y: 30,
+            duration: 0.4,
+            onComplete: function () {
+
+                // Change content
+                $("#service-title").text(services[serviceKey].title);
+                $("#service-text").text(services[serviceKey].text);
+                $("#service-image").attr("src", services[serviceKey].image);
+
+                // GSAP IN ANIMATION
+                gsap.fromTo("#service-content",
+                    { opacity: 0, y: -30 },
+                    { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }
+                );
+            }
+        });
+
+    });
+
+    // ================= GET SERVICE FROM URL =================
+    function getServiceFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("service");
+    }
+
+    let selectedService = getServiceFromURL();
+
+    if (selectedService && services[selectedService]) {
+
+        // Remove default active tab
+        $(".service-tab").removeClass("active-tab");
+
+        // Add active class to selected tab
+        $('.service-tab[data-service="' + selectedService + '"]')
+            .addClass("active-tab");
+
+        // Update content directly
+        $("#service-title").text(services[selectedService].title);
+        $("#service-text").text(services[selectedService].text);
+        $("#service-image").attr("src", services[selectedService].image);
+    }
     // ================= HERO GSAP ANIMATION =================
     gsap.from("#hero-title", {
         duration: 1,
@@ -221,9 +303,177 @@ $(document).ready(function () {
                 ease: "power3.in"
             });
         });
+    });
+    // Contact Us
+    gsap.from("#contactForm input, #contactForm select, #contactForm textarea", {
+        scrollTrigger: {
+            trigger: "#contactForm",
+            start: "top 85%",
+        },
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1,
+        ease: "power3.out"
+    });
+
+    gsap.from("#contactForm button", {
+        scrollTrigger: {
+            trigger: "#contactForm",
+            start: "top 85%",
+        },
+        scale: 0.8,
+        opacity: 0,
+        duration: 1,
+        delay: 0.3,
+        ease: "back.out(1.7)",
+    });
+
+    $("#contactForm").submit(function (e) {
+        e.preventDefault();
+
+        let isValid = true;
+
+        let name = $("#name");
+        let email = $("#email");
+
+        $(".error-text").addClass("hidden");
+        $(".form-input").removeClass("border border-red-500");
+
+        if (name.val().trim() === "") {
+            name.addClass("border border-red-500");
+            name.next(".error-text").removeClass("hidden");
+            isValid = false;
+        }
+
+        if (email.val().trim() === "") {
+            email.addClass("border border-red-500");
+            email.next(".error-text").removeClass("hidden");
+            isValid = false;
+        }
+
+        if (isValid) {
+            alert("Form submitted successfully!");
+            this.reset();
+        }
+    });
+
+    // ================= MAP INFO BAR ANIMATION =================
+    gsap.from(".info-box", {
+        scrollTrigger: {
+            trigger: ".info-box",
+            start: "top 85%",
+        },
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out"
+    });
+
+    // ================= SERVICES AUTO SLIDER =================
+    let slider = document.getElementById("service-slider");
+    let cards = document.querySelectorAll(".service-card");
+
+    let cardWidth = cards[0].offsetWidth + 32; // 32 = gap-8
+    let currentIndex = 0;
+
+    function autoSlide() {
+        currentIndex++;
+
+        if (currentIndex > cards.length - 3) {
+            currentIndex = 0;
+        }
+
+        gsap.to(slider, {
+            x: -(cardWidth * currentIndex),
+            duration: 1,
+            ease: "power3.inOut"
+        });
+    }
+
+    // Auto scroll every 3 seconds
+    setInterval(autoSlide, 3000);
 
 
+    // ================= ENTRY ANIMATION =================
+    gsap.from(".service-card", {
+        scrollTrigger: {
+            trigger: "#service-slider",
+            start: "top 85%"
+        },
+        y: 60,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out"
+    });
 
+    // ================= WHY CHOOSE US ANIMATION =================
+
+    // Main reveal animation
+    gsap.from(".why-img-main", {
+        scrollTrigger: {
+            trigger: ".why-img-main",
+            start: "top 85%"
+        },
+        scale: 0,
+        rotation: 180,
+        opacity: 0,
+        duration: 1.5,
+        ease: "back.out(1.7)"
+    });
+
+    gsap.from(".why-img-small1", {
+        scrollTrigger: {
+            trigger: ".why-img-small1",
+            start: "top 85%"
+        },
+        x: -100,
+        y: 50,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "power3.out"
+    });
+
+    gsap.from(".why-img-small2", {
+        scrollTrigger: {
+            trigger: ".why-img-small2",
+            start: "top 85%"
+        },
+        x: 100,
+        y: 50,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.5,
+        ease: "power3.out"
+    });
+
+
+    // Floating continuous animation
+    gsap.to(".why-img-small1", {
+        y: -15,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+    });
+
+    gsap.to(".why-img-small2", {
+        y: -20,
+        duration: 2.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+    });
+
+    gsap.to(".why-img-main", {
+        y: -10,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
     });
 
 

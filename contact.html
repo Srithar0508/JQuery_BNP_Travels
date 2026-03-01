@@ -3,9 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BNP Travels India Pvt Ltd</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.4)),
+                        url('images/aboutus_hero_image.svg') center/cover no-repeat;
+        }
+
+        .btn-green {
+            background: linear-gradient(to right, #0f9d58, #198754);
+        }
+
+        .btn-green:hover {
+            background: linear-gradient(to right, #198754, #0f9d58);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+    </style>
 </head>
 <body>
-    <h1>contact</h1>
+<!-- NAVBAR -->
+<header class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+        <div class="flex items-center space-x-3">
+            <img src="images/anplogo.svg" class="h-10">
+            <h1 class="text-green-700 font-bold text-lg">BNP Travels India Pvt Ltd</h1>
+        </div>
+
+        <nav class="hidden md:flex space-x-8 font-medium">
+            <a href="index.html" class="hover:text-green-600">Home</a>
+            <a href="about.html" class="hover:text-green-600">About</a>
+            <a href="services.html" class="hover:text-green-600">Services</a>
+            <a href="gallery.html" class="hover:text-green-600">Gallery</a>
+            <a href="contact.html" class="hover:text-green-600">Contact</a>
+        </nav>
+
+        <a href="contact.html" class="hidden md:block btn-green text-white px-5 py-2 rounded-md shadow-md">
+            Book Now →
+        </a>
+
+        <button id="menu-btn" class="md:hidden text-2xl text-green-700">☰</button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white">
+        <a href="index.html" class="block px-6 py-3 hover:bg-green-50">Home</a>
+        <a href="about.html" class="block px-6 py-3 hover:bg-green-50">About</a>
+        <a href="services.html" class="block px-6 py-3 hover:bg-green-50">Services</a>
+        <a href="gallery.html" class="block px-6 py-3 hover:bg-green-50">Gallery</a>
+        <a href="contact.html" class="block px-6 py-3 hover:bg-green-50">Contact</a>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero-bg h-screen flex items-center text-white pt-20">
+    <div class="container mx-auto px-6">
+        <div class="max-w-2xl">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="text-green-500 hover:text-green-600 cursor-pointer">Home</a>
+                <span>/</span>
+                <p>Contact Us</p>
+            </div>
+
+            <h2 id="hero-title" class="text-4xl md:text-6xl font-bold leading-tight">
+                Contact Us <br>
+            </h2>
+
+            <p id="hero-text" class="text-orange-500 mt-6 text-lg md:text-xl text-gray-200">
+                Creating quality Lifestyles, building stronger communities Quality Construction Services..            
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= MODERN CONTACT FORM ================= -->
+<section class="py-5 bg-[#f5f5f5]">
+
+    <div class="container mx-auto px-6 max-w-4xl">
+
+        <!-- Heading -->
+         <div class="text-center mb-7">
+            <p class="text-gray-500 tracking-widest uppercase">Contact With Us</p>
+            <h2 class="text-4xl md:text-5xl font-semibold mt-4">
+                Feel free to get in touch <br>
+                with <span class="text-green-600">Book N Pack</span>
+            </h2>
+         </div>
+
+         <!-- Form -->
+          <form id="contactForm" class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Name -->
+                 <div>
+                    <input type="text" id="name" placeholder="Your Name" class="form-input w-full p-4 rounded-lg bg-gray-200 focus:outline-none">
+                    <p class="error-text text-red-500 text-sm mt-2 hidden">
+                        Name is Required
+                    </p>
+                 </div>
+                <!-- Email -->
+                <div>
+                    <input type="email" id="email"
+                        placeholder="Email Address"
+                        class="form-input w-full p-4 rounded-lg bg-gray-200 focus:outline-none">
+                    <p class="error-text text-red-500 text-sm mt-2 hidden">
+                        Email is required
+                    </p>
+                </div>
+
+                <!-- Phone -->
+                <div>
+                    <input type="text"
+                        placeholder="Phone"
+                        class="w-full p-4 rounded-lg bg-gray-200 focus:outline-none">
+                </div>
+
+                <!-- Service -->
+                <div>
+                    <select class="w-full p-4 rounded-lg bg-gray-200 focus:outline-none">
+                        <option>Select Service</option>
+                        <option>Cab Service</option>
+                        <option>Bus Service</option>
+                        <option>Airport Transfer</option>
+                    </select>
+                </div>
+            </div>
+                        <!-- Message -->
+            <div>
+                <textarea rows="5"
+                    placeholder="Write Command"
+                    class="w-full p-4 rounded-lg bg-gray-200 focus:outline-none"></textarea>
+            </div>
+
+            <!-- Button -->
+            <div class="text-center">
+                <button type="submit"
+                    class="px-10 py-2 bg-green-600 text-white rounded-full 
+                           hover:bg-green-700 transition duration-300 shadow-md">
+                    Send Message
+                </button>
+            </div>
+          </form>
+    </div>
+</section>
+
+
+
+<!-- ================= CONTACT INFO MAP SECTION ================= -->
+<section class="relative ">
+    <!-- Google Map -->
+    <div class="h-[300px] w-full">
+        <iframe 
+            src="https://www.google.com/maps?q=BTM%20Layout,Bangalore&output=embed"
+            width="100%" 
+            height="100%" 
+            style="border:0;"
+            loading="lazy"
+            allowfullscreen="">
+        </iframe>
+    </div>
+</section>
+
+<section>
+    <!-- Green Info Bar -->
+    <div class="bg-orange-500 text-white shadow-xl pb-3">
+        <div class="grid md:grid-cols-3 gap-8 px-5 py-5">
+
+            <!-- Address -->
+            <div class="info-box flex items-start gap-4">
+                <div class="text-orange-400 text-4xl">📍</div>
+                <div>
+                    <h3 class="text-xl font-semibold">Address</h3>
+                    <p class="mt-2 text-sm text-gray-100">
+                        30 St. Kilda Road BTM Layout,<br>
+                        Bangalore.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="info-box flex items-start gap-4">
+                <div class="text-orange-400 text-4xl">📞</div>
+                <div>
+                    <h3 class="text-xl font-semibold">Contact</h3>
+                    <p class="mt-2 text-sm text-gray-100">
+                        annapoorna12@gmail.com<br>
+                        8978768876
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timing -->
+            <div class="info-box flex items-start gap-4">
+                <div class="text-orange-400 text-4xl">⏰</div>
+                <div>
+                    <h3 class="text-xl font-semibold">Timing</h3>
+                    <p class="mt-2 text-sm text-gray-100">
+                        Mon–Sat : 6:00am To 8:00pm<br>
+                        Sunday : CLOSED
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div></section>
+
+
+<div id="footer-section"></div>
+
+<!-- Bottom Copyright -->
+<footer class="bg-green-800 text-white text-center py-5">
+    © 2026 BNP Travels India Pvt Ltd. All Rights Reserved.
+</footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
